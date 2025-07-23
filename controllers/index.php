@@ -1,3 +1,5 @@
 <?php
 
-echo "hiting the controller";
+use framesz\Functions;
+
+Functions::loadView("index.view.php");
