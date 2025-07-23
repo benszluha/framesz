@@ -18,6 +18,6 @@ class Functions {
     }
 
     public static function loadView($fileName) {
-        require DIR . "veiws/{$fileName}";
+        require DIR . "views/{$fileName}";
     }
 }
