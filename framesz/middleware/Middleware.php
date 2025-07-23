@@ -26,6 +26,6 @@ class Middleware{
         }
 
         $middleWare = static::$map[$key];
-        return (new $middleWare($key))->resolve(); # Check this line -- It does not seem right 
+        return (new $middleWare($key))->handle(); 
     }
 }
