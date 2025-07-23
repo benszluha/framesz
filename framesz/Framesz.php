@@ -21,7 +21,7 @@ class Framesz {
 
     public static function container() {
         echo "<pre>";
-        var_dump(static::$container);
+            var_dump(static::$container);
         echo "</pre>";
         exit();
     }
