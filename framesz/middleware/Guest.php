@@ -2,10 +2,10 @@
 
 namespace framesz\middleware;
 
-class Auth {
+class Guest {
     public function handle() {
-        if (! isset($_SESSION['uid'])) {
-            header("location: /login");
+        if (isset($_SESSION['uid'])) {
+            header("location: /");
             exit();
         }
     }
