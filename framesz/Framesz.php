@@ -2,7 +2,7 @@
 
 namespace Szluha\Framesz;
 
-use framesz\Container;
+use Szluha\Framesz\Container;
 
 class Framesz {
     protected static $container;
