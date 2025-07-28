@@ -1,6 +1,6 @@
 <?php
 
-namespace framesz\middleware;
+namespace Szluha\Framesz\middleware;
 
 class Guest {
     public function handle() {

@@ -1,8 +1,8 @@
 <?php 
 
-use framesz\Container;
-use framesz\Database;
-use framesz\Framesz;
+use Szluha\Framesz\Container;
+use Szluha\Framesz\Database;
+use Szluha\Framesz\Framesz;
 
 $container = new Container();
 

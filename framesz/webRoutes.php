@@ -1,6 +1,6 @@
 <?php
 
-use framesz\Router;
+use Szluha\Framesz\Router;
 
 $router = new Router();
 

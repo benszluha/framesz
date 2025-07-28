@@ -1,9 +1,9 @@
 <?php
 
-namespace framesz;
+namespace Szluha\Framesz;
 
-use framesz\middleware\Middleware;
-use framesz\Functions;
+use Szluha\Framesz\middleware\Middleware;
+use Szluha\Framesz\Functions;
 
 class Router {
     protected $routes = [];

@@ -1,8 +1,8 @@
 <?php
 
-namespace framesz;
+namespace Szluha\Framesz;
 
-use framesz\Framesz;
+use Szluha\Framesz\Framesz;
 
 class Sessions {
     public function startSession($username, $password) {

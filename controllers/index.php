@@ -1,5 +1,5 @@
 <?php
 
-use framesz\Functions;
+use Szluha\Framesz\Functions;
 
 Functions::loadView("index.view.php");

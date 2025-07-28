@@ -1,6 +1,6 @@
 <?php
 
-namespace framesz;
+namespace Szluha\Framesz;
 
 use framesz\Container;
 

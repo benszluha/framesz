@@ -1,6 +1,6 @@
 <?php
 
-namespace framesz;
+namespace Szluha\Framesz;
 
 class Functions {
     public static function dd($value) {
