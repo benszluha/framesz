@@ -14,5 +14,7 @@
             "email": "ben@szluha.co.za"
         }
     ],
-    "require": {}
+    "require": {
+        "twig/twig": "^3.21"
+    }
 }
