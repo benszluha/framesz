@@ -3,17 +3,17 @@
 namespace Szluha\Framesz;
 
 class Renderer {
-    protected $loader;
-    protected $twig;
-
-    public function __construct() {
-        $this->loader = new \Twig\Loader\FilesystemLoader( DIR . 'views');
-        $this->twig = new \Twig\Environment($this->loader, [
-            'cache' => DIR . 'cache',
+    /**
+     * @param mixed $file
+     * @param mixed $data
+     */
+    public static function render($file, $data = []): void {
+        $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . "/../views");
+        $twig = new \Twig\Environment($loader, [
+            'cache' => __DIR__ . '/../cache',
+            'debug' => true,
         ]);
-    }
 
-    public function render($fileName, $data = []) {
-        $this->twig->render($fileName, $data);
+        $template = $twig->display($file, $data);
     }
 }
