@@ -14,6 +14,6 @@ class Renderer {
             'debug' => true,
         ]);
 
-        $template = $twig->display($file, $data);
+        $twig->display($file, $data);
     }
 }
