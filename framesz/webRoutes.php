@@ -1,14 +1,15 @@
 <?php
 
+use Szluha\Framesz\Functions;
+use Szluha\Framesz\Renderer;
 use Szluha\Framesz\Router;
+use Szluha\Framesz\Security;
 
 $router = new Router();
 
 // Add the routes here
-$router->addGET("/", "index.php");
-
-// Handle the request to the routes
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
-
-$router->route($uri, $method);
+$router->addGET("/", function() {
+    Renderer::render("index.html.twig", [
+        "Title" => "Framesz",
+    ]);
+});

@@ -1,5 +1,6 @@
 <?php
+use Szluha\Framesz\Renderer;
 
-use Szluha\Framesz\Functions;
-
-Functions::loadView("index.view.php");
+Renderer::render("index.html.twig", [
+    'Title' => 'Framesz'
+]);

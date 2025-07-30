@@ -1,0 +1,5 @@
+/.idx
+/.vscode
+/vendor
+/vendor/
+/cache/*

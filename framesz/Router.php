@@ -6,37 +6,37 @@ use Szluha\Framesz\middleware\Middleware;
 use Szluha\Framesz\Functions;
 
 class Router {
-    protected $routes = [];
+    protected static $routes = [];
 
-    protected function addRoute($method, $uri, $controller){
-        $this->routes[] = [
+    protected function addRoute($method, $uri, $func){
+        static::$routes[] = [
             "method" => $method,
             "uri" => $uri,
-            "controller" => $controller,
+            "callback" => $func,
             "middleware" => null
         ];
 
         return $this;
     }
 
-    public function addGET($uri, $controller) {
-        return $this->addRoute("GET", $uri, $controller);
+    public function addGET($uri, $func) {
+        return $this->addRoute("GET", $uri, $func);
     }
 
-    public function addPOST($uri, $controller) {
-        return $this->addRoute("POST", $uri, $controller);
+    public function addPOST($uri, $func) {
+        return $this->addRoute("POST", $uri, $func);
     }
 
-    public function addPUT($uri, $controller) {
-        return $this->addRoute("PUT", $uri, $controller);
+    public function addPUT($uri, $func) {
+        return $this->addRoute("PUT", $uri, $func);
     }
 
-    public function addPATCH($uri, $controller) {
-        return $this->addRoute("PATCH", $uri, $controller);
+    public function addPATCH($uri, $func) {
+        return $this->addRoute("PATCH", $uri, $func);
     }
 
-    public function addDELETE($uri, $controller) {
-        return $this->addRoute("DELETE", $uri, $controller);
+    public function addDELETE($uri, $func) {
+        return $this->addRoute("DELETE", $uri, $func);
     }
 
     public function only($key) {
@@ -49,13 +49,13 @@ class Router {
         exit();        
     } 
 
-    public function route($uri, $method) {
+    public static function route($uri, $method) {
         $method = strtoupper($method);
 
-        foreach($this->routes as $route) {
+        foreach(static::$routes as $route) {
             if($route['uri'] === $uri && strtoupper($route['method']) === $method) {
                 Middleware::resolve($route['middleware']);
-                Functions::loadController($route['controller']);               
+                call_user_func($route['callback']);               
             }
         }
     }
