@@ -16,8 +16,13 @@
     ],
     "require": {
         "twig/twig" : "^3.21",
+        
         "doctrine/orm" : "^3.5",
         "doctrine/dbal" :"^4.3",
-        "doctrine/migrations" :"^3.9"
+        "doctrine/migrations" :"^3.9",
+        "doctrine/sql-formatter" :"^1.5",
+        
+        "symfony/yaml" :"^7.3",
+        "symfony/cache" :"^7.3"
     }
 }
