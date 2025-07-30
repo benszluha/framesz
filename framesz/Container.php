@@ -8,7 +8,7 @@ class Container {
     protected $bindings = [];
 
     public function bind($key, $callback) {
-        $this->bindings[$key] = [$callback];
+        $this->bindings[$key] = $callback;
     }
 
     public function resolve($key) {
