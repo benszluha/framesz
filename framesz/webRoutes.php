@@ -1,7 +1,9 @@
 <?php
 
-use Szluha\Framesz\Router;
+use Szluha\Framesz\Functions;
 use Szluha\Framesz\Renderer;
+use Szluha\Framesz\Router;
+use Szluha\Framesz\Security;
 
 $router = new Router();
 
