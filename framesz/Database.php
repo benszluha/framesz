@@ -2,6 +2,16 @@
 
 namespace Szluha\Framesz;
 
+require __DIR__ . "/../vendor/autoload.php";
+
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\ORMSetup;
+use Doctrine\Migrations\Configuration\EntityManager\ExistingEntityManager;
+use Doctrine\Migrations\DependencyFactory;
+use Doctrine\Migrations\Configuration\Migration\PhpFile;
+use Doctrine\DBAL\DriverManager;
+use Symfony\Component\Yaml\Yaml;
+
 use \PDO;
 
 class Database {
@@ -20,5 +30,25 @@ class Database {
         $statement->execute($params);
         
         return $statement;
+    }
+
+    public static function createEntityManager() {
+        $migrationsPath = __DIR__ . "/../Migrations";
+        if (!file_exists($migrationsPath)) {
+            mkdir($migrationsPath,0777, true);  
+        }
+
+        $config = new PhpFile(__DIR__ . "/../migrations.php");
+
+        $paths = [__DIR__ . "/Entity"];
+        $isDevMode = true;
+
+        $ORMConfig = ORMSetup::createAttributeMetadataConfiguration($paths, $isDevMode);
+
+        $conn = Yaml::parseFile(__DIR__ . "/../config/db.yaml")['mariadb'];
+
+        $connection = DriverManager::getConnection($conn);
+
+        return new EntityManager($connection, $ORMConfig);
     }
 }
