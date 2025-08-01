@@ -3,4 +3,5 @@
 /vendor
 /vendor/
 /cache/*
+/Migrations/*
 /composer.lock
