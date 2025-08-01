@@ -4,16 +4,20 @@ return [
     'table_storage' => [
         'table_name' => 'doctrine_migration_versions',
         'version_column_name' => 'version',
-        'version_column_length' => 191,
+        'version_column_length' => '191',
         'executed_at_column_name' => 'executed_at',
+        'execution_time_column_name' => 'executed_time',
     ],
+
     'migrations_paths' => [
-        'App\\Migrations' => __DIR__ . '/migrations', // Namespace and path to your migrations
+        'Szluhab\Migrations' => __DIR__ . "/Migrations"
+
     ],
-    'all_or_nothing' => true, // Ensure all migrations in a batch are within a single transaction
-    'transactional' => true, // Wrap each individual migration in a transaction
+    
+    'all_or_nothing' => true,
+    'transactional' => true,
     'check_database_platform' => true,
-    'organize_migrations' => 'year_and_month', // Organize migrations into year/month subdirectories
-    'connection' => null, // Managed by cli-config.php
-    'em' => null,         // Managed by cli-config.php
+    'organize_migrations' => 'none',
+    'connection' => null,
+    'em' => null,
 ];

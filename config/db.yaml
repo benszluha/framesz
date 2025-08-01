@@ -1,5 +1,5 @@
 # Change the database config to match your environment
-database:
+mariadb:
   driver: pdo_mysql
   host: 127.0.0.1
   dbname: framesz
