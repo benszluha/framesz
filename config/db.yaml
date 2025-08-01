@@ -1,6 +1,7 @@
+# Change the database config to match your environment
 database:
-  driver: pdo_mariadb,
+  driver: pdo_mysql
   host: 127.0.0.1
-  dbname: Framesz
-  user: framesz
-  password: framesz123
+  dbname: framesz
+  user: root
+  password: admin

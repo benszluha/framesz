@@ -38,7 +38,7 @@ $conn = [
 $entityManager = EntityManager::create($conn, $config);
 
 // --- Migragtons Configuration --- //
-$migrationsConfig = new PhpFile(__DIR__ . /../migratoins.php); // The path to the migrations config file
+$migrationsConfig = new PhpFile(__DIR__ . '/../migratoins.php'); // The path to the migrations config file
 
 $dependancyFactory = DependencyFactory::fromEntityManager(
     $migrationsConfig,
